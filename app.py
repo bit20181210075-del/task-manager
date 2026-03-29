@@ -555,3 +555,10 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", "5000"))
     print(f"APP STARTED on {host}:{port}")
     app.run(host=host, port=port, debug=False)
+    
+@app.route('/api/test-telegram', methods=['GET', 'POST'])
+def test_telegram():
+    return {
+        "status": "ok",
+        "message": "Telegram route works!"
+    }
