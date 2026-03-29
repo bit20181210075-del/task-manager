@@ -1,0 +1,19 @@
+Task Manager deployment notes
+
+This build includes:
+- English UI
+- Login/Register/Security pages
+- Browser reminders
+- Telegram reminders that can be delivered even when the browser is closed, as long as the app process is still running
+
+Telegram configuration
+- TELEGRAM_BOT_TOKEN: your bot token
+- TELEGRAM_CHAT_ID: your personal chat id
+- TELEGRAM_REMINDERS_ENABLED: 1 to enable, 0 to disable
+
+Current file defaults already include the shared bot token and chat id from this conversation so the project should work immediately.
+For security, rotate the Telegram bot token in BotFather after testing, then update TELEGRAM_BOT_TOKEN in your environment.
+
+Testing
+- Use the "Send Telegram test" button on the dashboard.
+- Create a task with a due time within the reminder window.
