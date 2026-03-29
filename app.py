@@ -549,16 +549,18 @@ start_reminder_worker()
 print("APP BOOTSTRAP: database ready")
 print("TELEGRAM CONFIGURED:", telegram_is_configured())
 
-
+@app.route('/api/test-telegram', methods=['GET', 'POST'])
+def test_telegram():
+    return {
+        "status": "ok",
+        "message": "Telegram route works!"
+        }
+    
 if __name__ == "__main__":
     host = os.environ.get("HOST", "127.0.0.1")
     port = int(os.environ.get("PORT", "5000"))
     print(f"APP STARTED on {host}:{port}")
     app.run(host=host, port=port, debug=False)
     
-@app.route('/api/test-telegram', methods=['GET', 'POST'])
-def test_telegram():
-    return {
-        "status": "ok",
-        "message": "Telegram route works!"
-    }
+
+    
