@@ -555,6 +555,7 @@ def test_telegram():
         "status": "ok",
         "message": "Telegram route works!"
         }
+    print("ROUTE TEST REGISTERED")
     
 if __name__ == "__main__":
     host = os.environ.get("HOST", "127.0.0.1")
